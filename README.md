@@ -1,1 +1,114 @@
 # AAE6102-Assignment-1-ZhangYuanyuan
+# GNSS SDR Signal Processing and Analysis
+
+This repository contains the technical report and analysis conducted using the `postProcessing.m` script, which processes GNSS raw IF data to perform acquisition, tracking, navigation data decoding, and position/velocity estimation. The following are the results and discussions for the four tasks based on the provided plots.
+
+---
+
+## **Task 1: Acquisition**
+
+### **Objective**
+Process the IF data using a GNSS SDR to identify visible satellites and generate the initial acquisition results.
+
+### **Results**
+- The **Acquisition Results Plot** (Figure 2) shows that satellites with PRN 16, 20, 27, and 31 were successfully acquired with high acquisition metrics.
+- **Key Observations**:
+  - The acquisition metrics for the acquired satellites exceed the threshold, indicating successful detection.
+  - The remaining satellites were not acquired due to low signal strength or interference.
+
+### **Discussion**
+- The satellites detected will be further processed in the tracking stage.
+- Urban interference or multipath effects may reduce the SNR, making acquisition more challenging for weaker signals.
+
+---
+
+## **Task 2: Tracking**
+
+### **Objective**
+Adapt the tracking loop (DLL) to generate correlation plots and analyze tracking performance. Discuss the impact of urban interference on correlation peaks.
+
+### **Results**
+- **Correlation Peaks**:
+  - The tracking loop maintained synchronization with the acquired satellites.
+  - The correlation peaks for Prompt correlators were sharp, indicating successful tracking.
+- **Impact of Urban Interference**:
+  - Urban environments introduce interference that may degrade the correlation peaks, causing them to flatten or shift.
+  - Multipath effects can lead to secondary peaks, potentially affecting code phase estimation.
+
+### **Discussion**
+- The tracking performance is robust for the acquired satellites, with minimal distortion observed in correlation peaks.
+- Advanced tracking techniques, such as Narrow Correlator or Multipath Estimating DLL, could further mitigate urban interference.
+
+---
+
+## **Task 3: Navigation Data Decoding**
+
+### **Objective**
+Decode the navigation message and extract key parameters, such as ephemeris data, for at least one satellite.
+
+### **Results**
+- Navigation data was successfully decoded for the tracked satellites.
+- **Extracted Ephemeris Data**:
+  - Semi-major axis, orbital inclination, and satellite clock corrections were obtained.
+  - Satellite positions were computed based on the decoded ephemeris.
+
+### **Discussion**
+- Accurate decoding of navigation messages is critical for position and velocity estimation.
+- Weak signals or interference can introduce errors in navigation data, which may propagate to position solutions.
+
+---
+
+## **Task 4: Position and Velocity Estimation**
+
+### **Objective**
+Using pseudorange measurements from tracking, implement the Weighted Least Squares (WLS) algorithm to compute the user's position and velocity.
+
+### **Results**
+- **Position Plot in UTM System**:
+  - The **Coordinates Variations Plot** (Figure 3, top) shows fluctuations in the East (E), North (N), and Up (U) directions over time, likely due to multipath and measurement noise.
+  - The **3D Position Plot** (Figure 3, bottom left) demonstrates the computed positions clustered around the mean position.
+  - The mean position is:
+    - **Latitude**: 22°19'42.3835"
+    - **Longitude**: 114°10'16.9629"
+    - **Height**: +5.7 m
+- **Skyplot**:
+  - The **Skyplot** (Figure 3, bottom right) shows the spatial distribution of the tracked satellites with a mean PDOP of 3.4446, indicating moderate geometric dilution of precision.
+
+### **Discussion**
+1. **Impact of Multipath**:
+   - Multipath effects cause fluctuations in pseudorange measurements, leading to position errors.
+   - The UTM position plot shows small deviations from the mean position, which can be attributed to multipath reflections.
+2. **Comparison with Ground Truth**:
+   - The computed position is close to the expected ground truth, with minor errors due to urban interference.
+
+---
+
+## **Summary**
+
+### **Task 1: Acquisition**
+- Successfully acquired satellites with PRN 16, 20, 27, and 31.
+
+### **Task 2: Tracking**
+- Tracking loops maintained synchronization with satellites, with sharp correlation peaks observed for Prompt correlators.
+
+### **Task 3: Navigation Data Decoding**
+- Ephemeris data was successfully decoded, enabling satellite position computation.
+
+### **Task 4: Position and Velocity Estimation**
+- The Weighted Least Squares (WLS) algorithm computed the user's position and velocity, with minor deviations caused by multipath effects.
+
+---
+
+## **Recommendations**
+1. **Multipath Mitigation**:
+   - Use advanced tracking techniques to reduce the impact of multipath interference.
+2. **Multi-Constellation Support**:
+   - Integrate multi-GNSS data (e.g., GPS, GLONASS, Galileo) for improved satellite geometry and accuracy.
+3. **Real-Time Processing**:
+   - Extend the system to support real-time GNSS signal processing for dynamic applications.
+
+---
+
+## **Future Work**
+- Implement robust filtering techniques (e.g., Kalman Filter) for improved position accuracy.
+- Investigate urban interference mitigation strategies to enhance GNSS performance in challenging environments.
