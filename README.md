@@ -1,4 +1,3 @@
-# AAE6102-Assignment-1-ZhangYuanyuan
 # GNSS SDR Signal Processing and Analysis
 
 This repository contains the technical report and analysis conducted using the `postProcessing.m` script, which processes GNSS raw IF data to perform acquisition, tracking, navigation data decoding, and position/velocity estimation. The following are the results and discussions for the four tasks based on the provided plots.
@@ -15,6 +14,11 @@ Process the IF data using a GNSS SDR to identify visible satellites and generate
 - **Key Observations**:
   - The acquisition metrics for the acquired satellites exceed the threshold, indicating successful detection.
   - The remaining satellites were not acquired due to low signal strength or interference.
+
+### **Analysis Based on Plots**
+- **Figure 2 (Acquisition Results Plot)**:
+  - Green bars represent acquired satellites with high acquisition metrics.
+  - Blue bars represent satellites that were not acquired.
 
 ### **Discussion**
 - The satellites detected will be further processed in the tracking stage.
@@ -35,6 +39,14 @@ Adapt the tracking loop (DLL) to generate correlation plots and analyze tracking
   - Urban environments introduce interference that may degrade the correlation peaks, causing them to flatten or shift.
   - Multipath effects can lead to secondary peaks, potentially affecting code phase estimation.
 
+### **Analysis Based on Plots**
+- **Figure 1 (Time Domain Plot)**:
+  - Shows the amplitude of the raw GNSS signal in the time domain. The signal appears noisy, which may impact correlation performance.
+- **Figure 1 (Frequency Domain Plot)**:
+  - Displays the frequency spectrum of the signal, showing peaks that correspond to the carrier frequencies of satellites. Noise and interference are also visible.
+- **Figure 1 (Histogram Plot)**:
+  - Confirms the distribution of signal samples. The near-uniform distribution suggests a well-received signal but may contain noise.
+
 ### **Discussion**
 - The tracking performance is robust for the acquired satellites, with minimal distortion observed in correlation peaks.
 - Advanced tracking techniques, such as Narrow Correlator or Multipath Estimating DLL, could further mitigate urban interference.
@@ -51,6 +63,10 @@ Decode the navigation message and extract key parameters, such as ephemeris data
 - **Extracted Ephemeris Data**:
   - Semi-major axis, orbital inclination, and satellite clock corrections were obtained.
   - Satellite positions were computed based on the decoded ephemeris.
+
+### **Analysis Based on Plots**
+- **Navigation Results Derived from Tracking Data**:
+  - Although not explicitly shown in the provided plots, the decoded navigation data is directly used in Figure 3 (Coordinates Variations Plot, 3D Position Plot, and Skyplot) to compute satellite positions and the receiver's location.
 
 ### **Discussion**
 - Accurate decoding of navigation messages is critical for position and velocity estimation.
@@ -74,6 +90,14 @@ Using pseudorange measurements from tracking, implement the Weighted Least Squar
 - **Skyplot**:
   - The **Skyplot** (Figure 3, bottom right) shows the spatial distribution of the tracked satellites with a mean PDOP of 3.4446, indicating moderate geometric dilution of precision.
 
+### **Analysis Based on Plots**
+- **Figure 3 (Coordinates Variations in UTM System)**:
+  - Shows the fluctuations in position computed using the WLS algorithm. Variations in the UTM coordinates demonstrate the impact of multipath and noise.
+- **Figure 3 (3D Position Plot)**:
+  - Visualizes the computed positions clustered around the mean position.
+- **Figure 3 (Skyplot)**:
+  - Displays the spatial distribution of visible satellites and the PDOP value, which reflects the satellite geometry's impact on position accuracy.
+
 ### **Discussion**
 1. **Impact of Multipath**:
    - Multipath effects cause fluctuations in pseudorange measurements, leading to position errors.
@@ -87,15 +111,21 @@ Using pseudorange measurements from tracking, implement the Weighted Least Squar
 
 ### **Task 1: Acquisition**
 - Successfully acquired satellites with PRN 16, 20, 27, and 31.
+- **Source Plot**: Figure 2 (Acquisition Results Plot).
 
 ### **Task 2: Tracking**
 - Tracking loops maintained synchronization with satellites, with sharp correlation peaks observed for Prompt correlators.
+- **Source Plots**: 
+  - Figure 1 (Time Domain Plot, Frequency Domain Plot, Histogram).
 
 ### **Task 3: Navigation Data Decoding**
 - Ephemeris data was successfully decoded, enabling satellite position computation.
+- **Source Plots**: Indirectly analyzed from Figure 3 (Coordinates Variations Plot, 3D Position Plot, Skyplot).
 
 ### **Task 4: Position and Velocity Estimation**
 - The Weighted Least Squares (WLS) algorithm computed the user's position and velocity, with minor deviations caused by multipath effects.
+- **Source Plots**:
+  - Figure 3 (Coordinates Variations in UTM System, 3D Position in UTM System, Skyplot).
 
 ---
 
