@@ -5,29 +5,27 @@
 ### **Objective**
 Process the IF data using a GNSS SDR to identify visible satellites and generate the initial acquisition results.
 
-### **Results**
-![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/1-open.png))  
-- The **Acquisition Results Plot** (Figure 2) shows that satellites with PRN 16, 20, 27, and 31 were successfully acquired with high acquisition metrics.
-- **Key Observations**:
-  - The acquisition metrics for the acquired satellites exceed the threshold, indicating successful detection.
-  - The remaining satellites were not acquired due to low signal strength or interference.
+### **1.Open-sky**
+![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/1-open.png)  
+- The **Acquisition Results Plot** shows that satellites with PRN 3,4,8,16, 22,26, 27, 31and 32 were successfully acquired with high acquisition metrics.
 
-### **Analysis Based on Plots**
+### **2.Urban**
 - **Figure 2 (Acquisition Results Plot)**:
-  - Green bars represent acquired satellites with high acquisition metrics.
-  - Blue bars represent satellites that were not acquired.
+- The **Acquisition Results Plot** shows that satellites with PRN 3,4,8,16, 22,26, 27, 31and 32 were successfully acquired with high acquisition metrics.
 
-### **Discussion**
-- The satellites detected will be further processed in the tracking stage.
-- Urban interference or multipath effects may reduce the SNR, making acquisition more challenging for weaker signals.
-
----
 
 ## **Task 2: Tracking**
 
 ### **Objective**
 Adapt the tracking loop (DLL) to generate correlation plots and analyze tracking performance. Discuss the impact of urban interference on correlation peaks.
 
+### **1.Open-sky**
+![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/1-open.png)  
+- The **Acquisition Results Plot** shows that satellites with PRN 3,4,8,16, 22,26, 27, 31and 32 were successfully acquired with high acquisition metrics.
+
+### **2.Urban**
+- **Figure 2 (Acquisition Results Plot)**:
+- The **Acquisition Results Plot** shows that satellites with PRN 3,4,8,16, 22,26, 27, 31and 32 were successfully acquired with high acquisition metrics.
 ### **Results**
 - **Correlation Peaks**:
   - The tracking loop maintained synchronization with the acquired satellites.
