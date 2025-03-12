@@ -6,7 +6,7 @@
 Process the IF data using a GNSS SDR to identify visible satellites and generate the initial acquisition results.
 
 ### **Results**
-![image](../images/1-open.png)  
+![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/1-open.png))  
 - The **Acquisition Results Plot** (Figure 2) shows that satellites with PRN 16, 20, 27, and 31 were successfully acquired with high acquisition metrics.
 - **Key Observations**:
   - The acquisition metrics for the acquired satellites exceed the threshold, indicating successful detection.
