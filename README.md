@@ -1,15 +1,12 @@
 # GNSS SDR Signal Processing and Analysis
 
-This repository contains the technical report and analysis conducted using the `postProcessing.m` script, which processes GNSS raw IF data to perform acquisition, tracking, navigation data decoding, and position/velocity estimation. The following are the results and discussions for the four tasks based on the provided plots.
-
----
-
 ## **Task 1: Acquisition**
 
 ### **Objective**
 Process the IF data using a GNSS SDR to identify visible satellites and generate the initial acquisition results.
 
 ### **Results**
+![描述文字](images/open-1.png)
 - The **Acquisition Results Plot** (Figure 2) shows that satellites with PRN 16, 20, 27, and 31 were successfully acquired with high acquisition metrics.
 - **Key Observations**:
   - The acquisition metrics for the acquired satellites exceed the threshold, indicating successful detection.
