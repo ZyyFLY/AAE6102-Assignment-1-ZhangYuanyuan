@@ -5,13 +5,13 @@
 ### **Objective**
 Process the IF data using a GNSS SDR to identify visible satellites and generate the initial acquisition results.
 
-### **1.Open-sky**
+### **1. Open-sky**
 ![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/1-open.png)  
-- The **Acquisition Results Plot** shows that satellites with PRN 3,4,8,16, 22,26, 27, 31and 32 were successfully acquired with high acquisition metrics.
+- The **Acquisition Results Plot** shows that satellites with PRN 16, 22,26, 27 and 31 are successfully acquired with high acquisition metrics.
 
-### **2.Urban**
+### **2. Urban**
 ![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/1-urban.png)
-- The **Acquisition Results Plot** shows that satellites with PRN 3,4,8,16, 22,26, 27, 31and 32 were successfully acquired with high acquisition metrics.
+- The **Acquisition Results Plot** shows that satellites with PRN 1,3,11 and 18 are successfully acquired with high acquisition metrics.
 
 
 ## **Task 2: Tracking**
