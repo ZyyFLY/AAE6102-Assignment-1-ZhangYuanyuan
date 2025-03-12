@@ -30,14 +30,10 @@ Adapt the tracking loop (DLL) to generate correlation plots and analyze tracking
 
 
 ### **Results**
-- **Correlation Peaks**:
-  - The tracking loop maintained synchronization with the acquired satellites.
-  - The correlation peaks for Prompt correlators were sharp, indicating successful tracking.
-- **Impact of Urban Interference**:
-  - Urban environments introduce interference that may degrade the correlation peaks, causing them to flatten or shift.
-  - Multipath effects can lead to secondary peaks, potentially affecting code phase estimation.
+- In an open environment, the signal frequency domain is concentrated, the time domain signal is balanced, and the multi-correlator results show that the PRN signal peak is clear and the correlation is good.
+- In an urban environment, the signal is interfered by the multipath effect, the noise is strong, the time domain signal fluctuates significantly, the multi-correlator result peak is low, and the signal correlation decreases.
 
-### **Analysis Based on Plots**
+
 
 ## **Task 3: Navigation Data Decoding**
 
@@ -45,11 +41,11 @@ Adapt the tracking loop (DLL) to generate correlation plots and analyze tracking
 Decode the navigation message and extract key parameters, such as ephemeris data, for at least one satellite.
 
 ### **Results**
+Below is the navigation data message decoded from incoming signal of urban.
 ![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/URBAN-PRN3.png) 
+Below are the key parameters from urban message.
 ![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/3-URBAN.png)  
 
-### **Analysis Based on Plots**
-- **Navigation Results Derived from Tracking Data**:
 
 
 ## **Task 4: Position and Velocity Estimation**
@@ -66,7 +62,9 @@ Using pseudorange measurements from tracking, implement the Weighted Least Squar
 ![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/wls-urban.png) 
 ![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/urban-v.png)  
 
-### **Analysis Based on Plots**
+### **Results**
+- In an open environment, the weighted least squares method (WLS) is used to estimate the position and velocity. The results show that the position deviation is small, the velocity changes smoothly, the amplitude of the three-dimensional components is consistent, and the accuracy is high.
+- In an urban environment, multipath effects and occlusions cause the position deviation to increase, the velocity estimation fluctuates violently, and the amplitude is uneven, the error increases significantly, and the algorithm performance is affected.
 
 
 ## **Task 5:Kalman Filter-Based Positioning**
@@ -83,4 +81,7 @@ Develop an Extended Kalman Filter (EKF) using pseudorange and Doppler measuremen
 ![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/ekf-urban.png) 
 ![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/urban-v-ekf.png) 
 
-### **Analysis Based on Plots**
+### **Results**
+-In an open environment, the Extended Kalman Filter (EKF) algorithm performs stably on position and velocity estimation, with small position changes, moderate velocity amplitude and stable fluctuations, and can effectively track user dynamics.
+
+-In an urban environment, due to multipath effects and occlusion, the EKF shows obvious errors, dramatic and unstable position changes, and abnormally high values ​​of velocity estimation, indicating that environmental noise has a greater impact on filter performance.
