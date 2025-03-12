@@ -19,12 +19,13 @@ Process the IF data using a GNSS SDR to identify visible satellites and generate
 ### **Objective**
 Adapt the tracking loop (DLL) to generate correlation plots and analyze tracking performance. Discuss the impact of urban interference on correlation peaks.
 
-### **1.Open-sky**
-![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/1-open.png)  
-- The **Acquisition Results Plot** shows that satellites with PRN 3,4,8,16, 22,26, 27, 31and 32 were successfully acquired with high acquisition metrics.
+### **1. Open-sky**
+![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/open-ACF.png)  
+- 
 
-### **2.Urban**
-- **Figure 2 (Acquisition Results Plot)**:
+### **2. Urban**
+![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/2-urban.png) 
+![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/urban-ACF.png)  
 - The **Acquisition Results Plot** shows that satellites with PRN 3,4,8,16, 22,26, 27, 31and 32 were successfully acquired with high acquisition metrics.
 ### **Results**
 - **Correlation Peaks**:
