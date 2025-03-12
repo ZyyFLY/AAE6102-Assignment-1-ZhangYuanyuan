@@ -10,7 +10,7 @@ Process the IF data using a GNSS SDR to identify visible satellites and generate
 - The **Acquisition Results Plot** shows that satellites with PRN 3,4,8,16, 22,26, 27, 31and 32 were successfully acquired with high acquisition metrics.
 
 ### **2.Urban**
-- **Figure 2 (Acquisition Results Plot)**:
+![image](https://github.com/ZyyFLY/AAE6102-Assignment-1-ZhangYuanyuan/blob/main/images/1-urban.png)
 - The **Acquisition Results Plot** shows that satellites with PRN 3,4,8,16, 22,26, 27, 31and 32 were successfully acquired with high acquisition metrics.
 
 
